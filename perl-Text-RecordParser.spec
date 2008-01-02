@@ -28,6 +28,7 @@ BuildRequires:	perl(Test::More)
 ## perl-version doesn't seemt to provide perl(version)
 BuildRequires:	perl-version
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This module is for reading record-oriented data in a delimited text
