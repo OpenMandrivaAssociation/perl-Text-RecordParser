@@ -1,10 +1,8 @@
 %define module	Text-RecordParser
 %define name	perl-%{module}
 %define	modprefix Text
-
-%define	version	1.2.1
-%define	rel	3
-%define release %mkrel %{rel}
+%define	version	1.3.0
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -12,11 +10,8 @@ Release:	%{release}
 License:	GPL
 Group:		Development/Perl
 Summary:	Read record-oriented files
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-v%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+Source:     http://www.cpan.org/modules/by-module/Text/%{module}-%{version}.tar.gz
 BuildRequires:	perl(Class::Accessor)
 BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl(List::MoreUtils)
@@ -25,10 +20,9 @@ BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Readonly)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More)
-## perl-version doesn't seemt to provide perl(version)
 BuildRequires:	perl-version
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is for reading record-oriented data in a delimited text
@@ -43,10 +37,10 @@ bind_fields. Either way, you can then use many methods to get at the
 data as arrays or hashes.
 
 %prep
-%setup -q -n %{module}-v%{version}
+%setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Build.PL installdirs=vendor destdir=%{buildroot}
+%{__perl} Build.PL installdirs=vendor
 ./Build
 
 %check
@@ -54,7 +48,7 @@ data as arrays or hashes.
 
 %install
 rm -rf %{buildroot}
-./Build install
+./Build install destdir=%{buildroot}
 
 %clean 
 rm -rf %{buildroot}
