@@ -1,17 +1,16 @@
-%define module	Text-RecordParser
-%define name	perl-%{module}
-%define	modprefix Text
-%define	version	1.3.0
-%define release %mkrel 1
+%define upstream_name	 Text-RecordParser
+%define	upstream_version 1.4.0
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	Read record-oriented files
 License:	GPL
 Group:		Development/Perl
-Summary:	Read record-oriented files
-Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Text/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Class::Accessor)
 BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl(List::MoreUtils)
@@ -20,9 +19,10 @@ BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Readonly)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More)
-BuildRequires:	perl-version
+BuildRequires:	perl(version)
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is for reading record-oriented data in a delimited text
@@ -37,7 +37,7 @@ bind_fields. Either way, you can then use many methods to get at the
 data as arrays or hashes.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
@@ -57,11 +57,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc Changes README
 %{_bindir}/tab*
-%{perl_vendorlib}/%{modprefix}
+%{perl_vendorlib}/Text
 %{_mandir}/man*/*
-
-
-
-
-
-
