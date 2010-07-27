@@ -1,5 +1,5 @@
 %define upstream_name	 Text-RecordParser
-%define	upstream_version 1.4.0
+%define upstream_version v1.5.0
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
