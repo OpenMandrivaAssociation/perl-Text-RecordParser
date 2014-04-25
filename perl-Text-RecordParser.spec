@@ -37,7 +37,7 @@ bind_fields. Either way, you can then use many methods to get at the
 data as arrays or hashes.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn Text-RecordParser-v%{version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
