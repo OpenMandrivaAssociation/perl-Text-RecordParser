@@ -20,6 +20,7 @@ BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Readonly)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More)
+BuildRequires:	perl(JSON::PP)
 BuildRequires:	perl(version)
 
 BuildArch:	noarch
@@ -56,6 +57,3 @@ data as arrays or hashes.
 %{_bindir}/tab*
 %{perl_vendorlib}/Text
 %{_mandir}/man*/*
-
-
-
