@@ -22,6 +22,9 @@ BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(JSON::PP)
 BuildRequires:	perl(version)
+BuildRequires: perl(Pod::Markdown)
+BuildRequires: perl(Pod::Readme)
+BuildRequires: perl(Text::Autoformat)
 
 BuildArch:	noarch
 
