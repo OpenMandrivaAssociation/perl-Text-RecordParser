@@ -45,6 +45,8 @@ data as arrays or hashes.
 
 %build
 %{__perl} Build.PL installdirs=vendor
+chmod a+w README.md
+pwd
 ./Build
 
 %check
