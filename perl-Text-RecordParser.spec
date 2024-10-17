@@ -9,7 +9,7 @@ Summary:	Read record-oriented files
 
 License:	GPL
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-v1.6.3.tar.gz
 
 BuildRequires:	perl(Class::Accessor)
