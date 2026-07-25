@@ -1,16 +1,16 @@
 %define upstream_name	 Text-RecordParser
-%define upstream_version v1.5.0
+%define upstream_version 1.006005
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version 1.6.3
-Release:    3
+Version:    %{upstream_version}
+Release:    1
 
 Summary:	Read record-oriented files
 
 License:	GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-v1.6.3.tar.gz
+Url:		https://metacpan.org/dist/Text-RecordParser
+Source0:    https://cpan.metacpan.org/authors/id/K/KC/KCLARK/Text-RecordParser-1.6.5.tar.gz
 
 BuildRequires:	perl(Class::Accessor)
 BuildRequires:	perl(IO::Scalar)
